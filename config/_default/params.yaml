@@ -1,0 +1,26 @@
+title: "Up Business"
+description: "Technology Made Simple, Safe, and Stress-Free."
+images: 
+  - "images/logo.png"
+
+logo: "arrow-up.png"
+
+favicons:
+  themeColor: "#FFFFFF"
+  backgroundColor: "#FFFFFF"
+  faviconColor: "#000000"
+
+social:
+  instagram: "#"
+  facebook: "#"
+  twitter: "#"
+
+location:
+  - "555 Somewhere Dr. Abudhabi, Ontario N7T6S6"
+
+contact:
+  - "joenonymous@gmail.com"
+  - "519-867-5309"
+
+copyright: "© 2025 Tech Care Connect All Rights Reserved"
+

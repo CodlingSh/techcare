@@ -1,0 +1,25 @@
+enable: true
+
+title: "Featured Products"
+text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec quam nibh elit pellentesque velit netus suspendisse. Sed enim, pretium, montes, in ut dolor urna."
+cards:
+  - image: "images/services-web-development.png"
+    title: "One on One Tech Help"
+    text: "Need personalized help with your device, software, or everyday tech issues? Our One-on-One Tech Consult provides customized support tailored to your unique needs."
+    button:
+      label: "Learn more"
+      link: "#"
+
+  - image: "images/services-web-development.png"
+    title: "Group Tech Help"
+    text: "Join our interactive Group Tech Help Class, designed to help individuals of all ages and skill levels feel more confident using technology."
+    button:
+      label: "Learn more"
+      link: "#"
+
+  - image: "images/services-web-development.png"
+    title: "Tech Help One Hour"
+    text: "Our 1-Hour Tech Help Class is the perfect way to get hands-on support, learn new skills, and build tech confidence — all in a relaxed, welcoming environment."
+    button:
+      label: "Learn more"
+      link: "#"
