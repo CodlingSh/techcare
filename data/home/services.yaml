@@ -1,7 +1,7 @@
 enable: true
 
 title: "Featured Products"
-text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec quam nibh elit pellentesque velit netus suspendisse. Sed enim, pretium, montes, in ut dolor urna."
+text: "Experience unparalleled technological advancement with our bespoke solutions. Schedule your consultation today to explore a world where cutting-edge innovations meet meticulous craftsmanship."
 cards:
   - image: "images/services-web-development.png"
     title: "One on One Tech Help"

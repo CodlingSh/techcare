@@ -1,7 +1,11 @@
 enable: true
 
-title: "Start your business now!"
-image: "images/services-web-development.png"
+title: "Our Mission"
+image: ""
+text: |
+  At Tech Care Connect, we are driven by a shared passion to empower our community through technology. We believe that everyone—regardless of age or experience—deserves the knowledge and confidence to use technology safely and effectively.
+
+  Our mission is to provide patient, personalized support that simplifies the digital world, while also educating people on how to protect themselves from online scams. Through trust, empathy, and clear communication, we’re creating a safe space for learning and digital growth—one person at a time.
 button:
-  label: "Let's talk"
+  label: "Learn More"
   link: "#"
