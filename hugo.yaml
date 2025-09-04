@@ -12,21 +12,13 @@ build:
     - source: "(postcss|tailwind)\\.config\\.js"
       target: 'css'
 
-# module:
-#   hugo_version:
-#     min: "0.147.8"
-
-#   imports:
-#     - path: hugo-up-business
-
-#   mounts:
-#     - source: 'hugo_stats.json'
-#       target: 'assets/notwatching/hugo_stats.json'
-#       disableWatch: true
-
-#     - source: 'assets'
-#       target: 'assets'
-
 taxonomies:
   series: "series"
   tags: "tags"
+
+params:
+  colors:
+    bg: "#F5E8D0"
+    primary: "#2C3E50"
+    secondary: "#3FBFBC"
+    tertiary: "#BFE0C6"
