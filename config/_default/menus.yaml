@@ -1,6 +1,6 @@
 main:
   - name: "Home"
-    url: "/#hero"
+    url: "/"
     weight: 1
 
   - name: "Our team"
@@ -13,12 +13,12 @@ main:
 
 buttons:
   - name: "Book a Session"
-    url: "/#"
+    url: "/services"
     weight: 4
 
 footer:
   - name: "Home"
-    url: "/#hero"
+    url: "/"
     weight: 1
 
   - name: "Our team"
@@ -30,5 +30,5 @@ footer:
     weight: 3
 
   - name: "Book a Session"
-    url: "/#"
+    url: "/services"
     weight: 4
