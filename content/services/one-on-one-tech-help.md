@@ -1,6 +1,6 @@
 +++
 title = 'One on One Tech Help'
-description = ""
+description = "Need personalized help with your device, software, or everyday tech issues? Our One-on-One Tech Consult provides customized support tailored to your unique needs."
 price = 30.00
 weight = 1
 draft = false

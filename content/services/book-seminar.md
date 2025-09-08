@@ -1,6 +1,6 @@
 +++
 title = 'Book Seminar'
-description = ""
+description = "Join our interactive Group Tech Help Class, designed to help individuals of all ages and skill levels feel more confident using technology."
 price = 45.00
 weight = 2
 draft = false
