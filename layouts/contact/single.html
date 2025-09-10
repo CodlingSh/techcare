@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      {{ with .Title }}
+        <h2 class="text-primary mb-16 text-center text-6xl font-bold">{{ . }}</h2>
+      {{ end }}
+      {{ with .Params.description }}
+        <p class="mx-auto mb-16 text-center">{{ . }}</p>
+      {{ end }}
+      <form class="flex flex-wrap justify-between w-[95%] max-w-[43.75rem] mx-auto border rounded-2xl p-4 lg:p-8">
+        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+            <label class="mb-1 pl-4" for="fName"><strong>First Name</strong></label>
+            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="fName" name="fName" placeholder="John">
+        </div>
+        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+            <label class="mb-1 pl-4" for="lName"><strong>Last Name</strong></label>
+            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="lName" name="lName" placeholder="Doe">
+        </div>
+        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+            <label class="mb-1 pl-4" for="email"><strong>Email Address</strong></label>
+            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="email" name="email" placeholder="johndoe@gmail.com">
+        </div>
+        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+            <label class="mb-1 pl-4" for="phone"><strong>Phone Number</strong></label>
+            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="phone" name="phone" placeholder="(519) 123-4567">
+        </div>
+        <div class="flex flex-col mb-4 w-full">
+            <label class="mb-1 pl-4" for="anythingElse"><strong>Anything Else We Should Know?</strong></label>
+            <textarea class="bg-darker-white px-4 py-2 rounded-2xl resize-none" id="anythingElse" name="anythingElse" rows="6"></textarea>
+        </div>
+        <input class="bg-green-m text-white btn ml-auto hover:bg-[#56B254] active:bg-[#237f21] active:translate-y-0.5" type="submit" value="Submit">
+    </form>
+    </div>
+  </section>
+{{ end }}
