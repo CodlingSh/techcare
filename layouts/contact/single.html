@@ -4,32 +4,41 @@
       {{ with .Title }}
         <h2 class="text-primary mb-16 text-center text-6xl font-bold">{{ . }}</h2>
       {{ end }}
-      {{ with .Params.description }}
-        <p class="mx-auto mb-16 text-center">{{ . }}</p>
-      {{ end }}
-      <form class="flex flex-wrap justify-between w-[95%] max-w-[43.75rem] mx-auto border rounded-2xl p-4 lg:p-8">
-        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
-            <label class="mb-1 pl-4" for="fName"><strong>First Name</strong></label>
-            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="fName" name="fName" placeholder="John">
-        </div>
-        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
-            <label class="mb-1 pl-4" for="lName"><strong>Last Name</strong></label>
-            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="lName" name="lName" placeholder="Doe">
-        </div>
-        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
-            <label class="mb-1 pl-4" for="email"><strong>Email Address</strong></label>
-            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="email" name="email" placeholder="johndoe@gmail.com">
-        </div>
-        <div class="flex flex-col mb-4 w-full lg:w-[48%]">
-            <label class="mb-1 pl-4" for="phone"><strong>Phone Number</strong></label>
-            <input class="bg-darker-white px-4 py-2 rounded-2xl" type="text" id="phone" name="phone" placeholder="(519) 123-4567">
-        </div>
-        <div class="flex flex-col mb-4 w-full">
-            <label class="mb-1 pl-4" for="anythingElse"><strong>Anything Else We Should Know?</strong></label>
-            <textarea class="bg-darker-white px-4 py-2 rounded-2xl resize-none" id="anythingElse" name="anythingElse" rows="6"></textarea>
-        </div>
-        <input class="bg-green-m text-white btn ml-auto hover:bg-[#56B254] active:bg-[#237f21] active:translate-y-0.5" type="submit" value="Submit">
-    </form>
+      <div class="flex flex-col xl:flex-row">
+        {{ with .Content }}
+          <div class="max-w-[30rem] mb-4 mx-auto">
+            {{ . }}
+          </div>
+        {{ end }}
+        <form class="bg-tertiary flex flex-wrap justify-between mx-auto rounded-2xl p-8 xl:max-w-[50%]">
+          <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+              <label class="mb-1 pl-4" for="fName"><strong>First Name</strong></label>
+              <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="fName" name="fName" placeholder="John">
+          </div>
+          <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+              <label class="mb-1 pl-4" for="lName"><strong>Last Name</strong></label>
+              <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="lName" name="lName" placeholder="Doe">
+          </div>
+          <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+              <label class="mb-1 pl-4" for="email"><strong>Email Address</strong></label>
+              <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="email" name="email" placeholder="johndoe@gmail.com">
+          </div>
+          <div class="flex flex-col mb-4 w-full lg:w-[48%]">
+              <label class="mb-1 pl-4" for="phone"><strong>Phone Number</strong></label>
+              <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="phone" name="phone" placeholder="(519) 123-4567">
+          </div>
+          <div class="flex flex-col mb-4 w-full">
+              <label class="mb-1 pl-4" for="anythingElse"><strong>Message</strong></label>
+              <textarea class="bg-white px-4 py-2 rounded-2xl resize-none" id="anythingElse" name="anythingElse" rows="6"></textarea>
+          </div>
+          <a class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded border px-8 py-2 duration-500 hover:text-white" href="{{ .Permalink }}">
+            Send
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+            </svg>
+          </a>
+      </form>
+    </div>
     </div>
   </section>
 {{ end }}
