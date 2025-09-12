@@ -1,6 +1,6 @@
 enable: true
 
-title: "Featured Products"
+title: "Our Services"
 text: "Experience unparalleled technological advancement with our bespoke solutions. Schedule your consultation today to explore a world where cutting-edge innovations meet meticulous craftsmanship."
 cards:
   - image: "images/services-web-development.png"
