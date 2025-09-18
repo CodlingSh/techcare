@@ -17,12 +17,12 @@ export async function handler(event) {
                 }
             ],
             mode: 'payment',
-            success_url: `${process.env.SITE_URL}/success.html`,
-            cancel_url: `${process.env.SITE_URL}/cancel.html`
+            success_url: `https://${process.env.SITE_URL}/success.html`,
+            cancel_url: `https://${process.env.SITE_URL}/cancel.html`
         })
 
         return {
-            statusCode: 303,
+            statusCode: 200,
             headers: {
                 Location: session.url
             },
