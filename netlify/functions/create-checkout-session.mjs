@@ -1,18 +1,20 @@
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+
+
 export async function handler(event) {
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Method Not Allowed" };
     } 
 
     try {
-        const { productId, quantity } = JSON.parse(event.body || "{}");
+        const { priceID, quantity } = JSON.parse(event.body || "{}");
 
         const session = await stripe.checkout.sessions.create({
             line_items: [
                 {
-                    price: productId,
+                    price: priceID,
                     quantity: parseInt(quantity, 10) || 1
                 }
             ],
@@ -28,7 +30,7 @@ export async function handler(event) {
             },
             body: JSON.stringify(
                 {
-                    message: "It really whips the llama's ass!"
+                    url: session.url
                 }
             )
         };
