@@ -1,7 +1,7 @@
 +++
 title = 'Book Seminar'
 description = "Join our interactive Group Tech Help Class, designed to help individuals of all ages and skill levels feel more confident using technology."
-price = 45.00
+priceID = "price_1S8Wi5GVXu1Hha9CQRMN0zVJ"
 weight = 2
 draft = false
 +++

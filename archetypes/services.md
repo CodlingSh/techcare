@@ -1,7 +1,7 @@
 +++
 title = '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 description = ""
-price = 45.00
+priceID = "INSERT PRICE HERE"
 weight = 9000
 draft = true
 +++
