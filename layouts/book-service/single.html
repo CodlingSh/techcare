@@ -1,0 +1,25 @@
+{{ define "main"}}
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        {{ with .Title }}
+            <h2 class="text-primary mb-16 text-center text-6xl font-bold">{{ . }}</h2>
+        {{ end }}
+        <div class="flex flex-col bg-tertiary rounded-2xl">      
+            <form>
+                <div class="flex flex-col mb-4 w-full p-8">
+                    <label class="mb-1 pl-4" for="fullName"><strong>Name</strong></label>
+                    <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="fullName" name="fullName" placeholder="Doe">
+                </div>
+                <div class="flex flex-col mb-4 w-full p-8">
+                    <label class="mb-1 pl-4" for="fullName"><strong>Email</strong></label>
+                    <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="fullName" name="fullName" placeholder="Doe">
+                </div>
+                <div class="flex flex-col mb-4 w-full p-8">
+                    <label class="mb-1 pl-4" for="fullName"><strong>Phone Number</strong></label>
+                    <input class="bg-white px-4 py-2 rounded-2xl" type="tel" pattern="^[0-9+\-\s()]{7,20}$" id="fullName" name="fullName" placeholder="Doe" title="Enter a valid phone number">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{{ end }}
