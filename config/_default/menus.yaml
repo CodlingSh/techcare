@@ -3,7 +3,7 @@ main:
     url: "/"
     weight: 1
 
-  - name: "Our team"
+  - name: "Our Team"
     url: "/about"
     weight: 2
 
@@ -25,7 +25,7 @@ footer:
     url: "/"
     weight: 1
 
-  - name: "Our team"
+  - name: "Our Team"
     url: "/about"
     weight: 2
 
