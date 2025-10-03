@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@import './shared/_pagination.css';
+
+@import './home/_hero.css';
+
+@layer base {
+  html {
+    font-family: 'NunitoSans', system-ui, sans-serif;
+    color: #0000009c;
+  }
+}
+
+@theme {
+  --color-background: {{ (default "#F5E8D0" site.Params.colors.bg) }};
+  --color-primary: {{ (default "#2C3E50" site.Params.colors.primary) }};
+  --color-secondary: {{ (default "#3FBFBC" site.Params.colors.secondary) }};
+  --color-tertiary: {{ (default "#7FB77E" site.Params.colors.tertiary) }};
+}
+
+body {
+  @apply antialiased;
+}
