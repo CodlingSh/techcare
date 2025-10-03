@@ -23,5 +23,5 @@ params:
   colors:
     bg: "#FAF3E7"
     primary: "#2C3E50"
-    secondary: "#3FBFBC"
+    secondary: "#007C91"
     tertiary: "#BFE0C6"
