@@ -21,7 +21,7 @@ taxonomies:
 
 params:
   colors:
-    bg: "#F5E8D0"
+    bg: "#FAF3E7"
     primary: "#2C3E50"
     secondary: "#3FBFBC"
     tertiary: "#BFE0C6"
