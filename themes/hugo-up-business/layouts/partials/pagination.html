@@ -1,0 +1,17 @@
+{{- $p := .Paginator -}}
+{{- if $p }}
+<nav aria-label="Pagination" class="pagination">
+  <ul>
+    {{- if $p.HasPrev }}
+      <li><a href="{{ $p.Prev.URL }}">‹ Newer</a></li>
+    {{- end }}
+    {{- range $i, $page := $p.Pagers }}
+      {{- $current := cond (eq $page $p) " aria-current=\"page\"" "" -}}
+      <li><a href="{{ $page.URL }}"{{ $current | safeHTMLAttr }}>{{ add $i 1 }}</a></li>
+    {{- end }}
+    {{- if $p.HasNext }}
+      <li><a href="{{ $p.Next.URL }}">Older ›</a></li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}

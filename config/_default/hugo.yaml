@@ -5,7 +5,6 @@ theme: "hugo-up-business"
 languageCode: "en-us"
 
 build:
-  command: "hugo --gc --minify"
   buildStats:
     enable: true
 
