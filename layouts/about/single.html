@@ -7,11 +7,11 @@
       {{ with .Params.description }}
         <p class="mx-auto mb-16 text-center">{{ . }}</p>
       {{ end }}
-      <div class="">
+      <div class="flex flex-col items-start xl:flex-row-reverse">
         {{ $imgs := .Resources.ByType "image" }}
         {{ with (first 1 $imgs) }}
           {{ $img := index . 0 }}
-          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="mx-auto w-full max-w-3xl mb-16 rounded-4xl border-8 border-(--color-primary)" width="768" height="512">
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="mx-auto max-w-xl mb-16 rounded-4xl border-8 border-(--color-primary)" width="{{ $img.Width }}" height="{{ $img.Height }}">
         {{ end }}
         {{ with .Content }}
           <div class="prose prose-lg mx-auto max-w-[37rem]">
