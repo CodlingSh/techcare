@@ -1,6 +1,8 @@
 {{ define "main" }}
   <section class="py-16">
-      {{ with .Site.Data.home.services }}{{ partial "blocks/home/services.html" . }}{{ end }}
+      {{ with .Site.Data.home.services }}
+        {{ partial "blocks/home/services.html" . }}
+      {{ end }}
       <div class="py-16">
         {{ partial "pagination.html" . }}
       </div>
