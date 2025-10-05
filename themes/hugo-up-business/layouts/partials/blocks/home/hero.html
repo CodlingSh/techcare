@@ -30,7 +30,8 @@
       {{ end }}
     </div>
     <div class="hidden items-center xl:flex">
-      {{ partial "utilities/image" (dict "src" .image "class" "max-w-full ml-auto object-cover object-center") }}
+      {{ $logo := resources.Get "images/logo.svg" }}
+      <img src="{{ $logo.RelPermalink }}" width="600" height="600" alt="Tech Care Connect" class="ml-auto">
     </div>
   </div>
 </section>

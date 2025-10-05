@@ -1,7 +1,8 @@
 <nav class="">
   <div class="container mx-auto flex items-center justify-between px-4 py-6">
     <a class="flex items-center" href="{{ .Site.BaseURL }}">
-      {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "size-6 xl:size-8") }}
+      {{ $logo := resources.Get "images/logo.svg" }}
+      <img src="{{ $logo.RelPermalink }}" class="size-6 xl:size-8" width="32" height="32" alt="logo">
       <span class="text-primary text-xl font-semibold uppercase ml-2 xl:text-3xl">{{ .Site.Title }}</span>
     </a>
     <button
@@ -20,7 +21,7 @@
     >
       <div class="container absolute top-0 mx-auto flex items-center justify-between px-4 py-6 xl:hidden">
         <a class="flex items-center xl:hidden" href="{{ .Site.BaseURL }}">
-          {{ partial "utilities/image.html" (dict "src" "images/logo.png" "class" "size-6 xl:size-8") }}
+          <img src="{{ $logo.RelPermalink }}" class="size-6 xl:size-8" width="32" height="32" alt="logo">
           <span class="text-primary text-xl font-semibold uppercase ml-2 xl:text-3xl">{{ .Site.Title }}</span>
         </a>
         <button
