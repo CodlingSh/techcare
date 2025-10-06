@@ -26,7 +26,9 @@ export async function handler(event) {
         return {
             statusCode: 200,
             headers: {
-                Location: session.url
+                ...cors,
+                "Content-Type": "application/json" ,
+                // Location: session.url
             },
             body: JSON.stringify(
                 {
@@ -35,6 +37,7 @@ export async function handler(event) {
             )
         };
     } catch(err) {
+        console.log("ERROR!");
         return {
             statusCode: 400,
             headers: {"Content-Type": "application/json"},
