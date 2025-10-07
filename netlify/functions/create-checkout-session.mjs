@@ -1,7 +1,11 @@
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-
+const cors = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+};
 
 export async function handler(event) {
     if (event.httpMethod !== "POST") {
@@ -28,7 +32,7 @@ export async function handler(event) {
             headers: {
                 ...cors,
                 "Content-Type": "application/json" ,
-                // Location: session.url
+                Location: session.url
             },
             body: JSON.stringify(
                 {
@@ -40,7 +44,7 @@ export async function handler(event) {
         console.log("ERROR!");
         return {
             statusCode: 400,
-            headers: {"Content-Type": "application/json"},
+            headers: {...cors, "Content-Type": "application/json"},
             body: JSON.stringify({error: err.message})
         };
     }
