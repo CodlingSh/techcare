@@ -99,6 +99,7 @@
 
 <script>
     const form = document.getElementById("checkoutForm");
+    let checkoutURL;
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -115,7 +116,10 @@
             })
         })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((data) => {
+            checkoutURL = data.url;
+            window.location.assign(checkoutURL);
+        })
     })
 </script>
 {{ end }}
