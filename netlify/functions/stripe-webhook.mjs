@@ -16,7 +16,6 @@ export async function handler(event) {
     try {
         if (webhookKey) {
             if (resendKey) {
-                console.log("I AM IN RESEND!");
                 await fetch("https://api.resend.com/emails", {
                     method: "POST",
                     headers: {
@@ -31,14 +30,14 @@ export async function handler(event) {
                         html: "<p>Congrats on sending your <strong>first email</strong>!</p>"
                     })
                 });
-            };
 
-            return {
-                statusCode: 200,
-                headers: {...cors, "Content-Type": "application/json"},
-                body: JSON.stringify({message: "I HAVE THE KEY"})
-            }
-        }
+                return {
+                    statusCode: 200,
+                    headers: {...cors, "Content-Type": "application/json"},
+                    body: JSON.stringify({message: "I HAVE THE KEY"})
+                };
+            };
+        };
     }
     catch(err) {
         return {
