@@ -13,13 +13,13 @@
         <div class="flex flex-col items-center gap-4 xl:flex-row xl:gap-8">
           {{ range $i, $e := .buttons }}
             {{ if (eq $i 0) }}
-              <a class="bg-primary hover:bg-primary/90 rounded px-8 py-2 text-white duration-500" href="{{ .url }}">
+              <a class="bg-primary hover:bg-primary/90 rounded px-8 py-2 text-white duration-500" href="{{ .link }}">
                 {{ .label }}
               </a>
             {{ else }}
               <a
                 class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded border px-8 py-2 duration-500 hover:text-white"
-                href="{{ .url }}"
+                href="{{ .link }}"
               >
                 {{ .label }}
                 {{ partial "icons/arrow-right" }}
