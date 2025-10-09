@@ -1,4 +1,4 @@
-const Stripe = require("stripe");
+import Stripe from "stripe";
 const webhookKey = process.env.STRIPE_WEBHOOK_SECRET;
 const resendKey = process.env.RESEND_KEY;
 
@@ -21,7 +21,6 @@ export async function handler(event) {
                 await fetch("https://api.resend.com/emails", {
                     method: "POST",
                     headers: {
-                        ...cors,
                         Authorization: `Bearer ${resendKey}`,
                         "Content-Type": "application/json",
                     },
