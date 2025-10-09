@@ -11,7 +11,7 @@
         {{ $imgs := .Resources.ByType "image" }}
         {{ with (first 1 $imgs) }}
           {{ $img := index . 0 }}
-          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="mx-auto max-w-xl mb-16 rounded-4xl border-8 border-(--color-primary)" width="{{ $img.Width }}" height="{{ $img.Height }}">
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" class="mx-auto w-full max-w-xl mb-16 rounded-4xl border-8 border-(--color-primary)" width="{{ $img.Width }}" height="{{ $img.Height }}">
         {{ end }}
         {{ with .Content }}
           <div class="prose prose-lg mx-auto max-w-[37rem]">
