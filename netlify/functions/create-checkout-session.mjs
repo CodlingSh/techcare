@@ -49,6 +49,3 @@ export async function handler(event) {
         };
     }
 }
-
-//success_url: `${process.env.SITE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-//cancel_url: `${process.env.SITE_URL}/cancel`

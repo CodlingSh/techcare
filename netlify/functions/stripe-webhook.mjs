@@ -15,7 +15,9 @@ export async function handler(event) {
 
     try {
         if (webhookKey) {
+            console.log("I have the webhook key");
             if (resendKey) {
+                console.log("I also have the  key");
                 await fetch("https://api.resend.com/emails", {
                     method: "POST",
                     headers: {
@@ -27,7 +29,7 @@ export async function handler(event) {
                         from: "onboarding@resend.dev",
                         to: "shelcod@gmail.com",
                         subject: "New Form Submission",
-                        html: "<p>Congrats on sending your <strong>first email</strong>!</p>"
+                        html: "<p>This is coming from the <strong>website</strong>!</p>"
                     })
                 });
 
