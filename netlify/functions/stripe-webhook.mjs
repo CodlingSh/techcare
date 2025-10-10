@@ -51,6 +51,13 @@ export async function handler(event) {
             })
         });
 
+        console.log("Email sent");
+        console.log(name);        
+        console.log(email);    
+        console.log(phone);    
+        console.log(preferredDate);  
+
+
         return {statusCode: 200, body: "ok"};
     }
 }
