@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <p class="p-8 text-center">Anything else you would like us to know?</p>  
-                <textarea id="anythingElse" class="w-full resize-y p-4 rounded-xl bg-white" rows="6"></textarea>
+                <textarea id="anythingElse" name="anythingElse" class="w-full resize-y p-4 rounded-xl bg-white" rows="6"></textarea>
                 <button type="submit" class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded border px-8 py-2 duration-500 ml-auto mt-8 hover:text-white">
                     Continue To Payment
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -103,11 +103,9 @@
     const form = document.getElementById("checkoutForm");
     let checkoutURL;
     
-    
-
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        const formInfo = new FormData(document.getElementById("checkoutForm"))
+        const formInfo = new FormData(document.getElementById("checkoutForm"));
         
         fetch("/.netlify/functions/create-checkout-session", {
             method: "POST",
