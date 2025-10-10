@@ -15,6 +15,8 @@ export async function handler(event) {
     try {
         const { priceID, quantity, metadata } = JSON.parse(event.body || "{}");
 
+        console.log(JSON.stringify(metadata));
+
         const session = await stripe.checkout.sessions.create({
             line_items: [
                 {
