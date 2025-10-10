@@ -29,6 +29,8 @@ export async function handler(event) {
         const session = stripeEvent.data.object;
         const { name, email, phone, preferredDate, backupDate, backupDate2, message } = session.metadata || {};
 
+        console.log(`Session ID: ${session.id}`);
+
         await fetch("https://api.resend.com/emails", {
             method: "POST",
             headers: {
@@ -49,50 +51,9 @@ export async function handler(event) {
                         <p>Field: ${message}</p>
                         `
             })
-        });
-
-        console.log("Email sent");
-        console.log(name);        
-        console.log(email);    
-        console.log(phone);    
-        console.log(preferredDate);  
+        }); 
 
 
         return {statusCode: 200, body: "ok"};
     }
 }
-
-    // try {
-    //     if (webhookKey) {
-    //         console.log("I have the webhook key");
-    //         if (resendKey) {
-    //             console.log("I also have the key");
-    //             await fetch("https://api.resend.com/emails", {
-    //                 method: "POST",
-    //                 headers: {
-    //                     Authorization: `Bearer ${resendKey}`,
-    //                     "Content-Type": "application/json",
-    //                 },
-    //                 body: JSON.stringify({
-    //                     from: "onboarding@resend.dev",
-    //                     to: "shelcod@gmail.com",
-    //                     subject: "New Form Submission",
-    //                     html: "<p>This is coming from the <strong>website</strong>!</p>"
-    //                 })
-    //             });
-
-    //             return {
-    //                 statusCode: 200,
-    //                 headers: {...cors, "Content-Type": "application/json"},
-    //                 body: JSON.stringify({message: "I HAVE THE KEY"})
-    //             };
-    //         };
-    //     };
-    // }
-    // catch(err) {
-    //     return {
-    //     statusCode: 400,
-    //     headers: {...cors, "Content-Type": "application/json"},
-    //     body: JSON.stringify({error: err.message})
-    // }
-    // }
