@@ -33,10 +33,10 @@ ${message ? `<p><b>Customer notes:</b><br>${message}</p>` : ""}
 const cxHTML = `
 <p>Hi ${name},</p>
 
-<p>Thank you for booking with Tech Care Connect! We’ve received your request and will follow up soon to confirm your appointment time.</p>
+<p>Thank you for booking with Tech Care Connect! We've received your request and will follow up soon to confirm your appointment time.</p>
 
 <p><b>Your details:</b><br>
-Name: ${name}<br>
+Name: ${fullName}<br>
 Email: ${email}<br>
 Phone: ${phone}</p>
 
@@ -47,9 +47,9 @@ Second backup date: ${backupDate2}</p>
 
 ${message ? `<p><b>Notes:</b><br>${message}</p>` : ""}
 
-<p>If anything changes, you can reply to this email and we’ll adjust your booking.</p>
+<p>If anything changes, you can reply to this email and we'll adjust your booking.</p>
 
-<p>– Tech Care Connect</p>
+<p>- Tech Care Connect</p>
 `;
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -71,31 +71,9 @@ export async function handler(event) {
 
     if (stripeEvent.type === "checkout.session.completed") {
         const session = stripeEvent.data.object;
-        const { name, email, phone, preferredDate, backupDate, backupDate2, message } = session.metadata || {};
+        const { fullName, email, phone, preferredDate, backupDate, backupDate2, message } = session.metadata || {};
 
         console.log("event session.metadata:", JSON.stringify(session.metadata));
-
-        await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${resendKey}`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                from: "onboarding@resend.dev",
-                to: "shelcod@gmail.com",
-                subject: "New Form Submission",
-                html: `
-                        <p>Field: ${name}</p>
-                        <p>Field: ${email}</p>
-                        <p>Field: ${phone}</p>
-                        <p>Field: ${preferredDate}</p>
-                        <p>Field: ${backupDate}</p>
-                        <p>Field: ${backupDate2}</p>
-                        <p>Field: ${message}</p>
-                        `
-            })
-        });
         
         // Email that goes to the customer
         await fetch("https://api.resend.com/emails", {
@@ -107,7 +85,7 @@ export async function handler(event) {
             body: JSON.stringify({
                 from: "onboarding@resend.dev",
                 to: `${email}`,
-                subject: `Thanks ${name} — we received your booking!`,
+                subject: `Thanks ${fullName} — we received your booking!`,
                 html: cxHTML
             })
         });
