@@ -14,7 +14,7 @@ const orderHTML = `
 <p>A new customer just completed checkout.</p>
 
 <p><b>Customer details:</b><br>
-Name: ${name}<br>
+Name: ${fullName}<br>
 Email: ${email}<br>
 Phone: ${phone}</p>
 
@@ -31,7 +31,7 @@ ${message ? `<p><b>Customer notes:</b><br>${message}</p>` : ""}
 `;
 
 const cxHTML = `
-<p>Hi ${name},</p>
+<p>Hi ${fullName},</p>
 
 <p>Thank you for booking with Tech Care Connect! We've received your request and will follow up soon to confirm your appointment time.</p>
 
