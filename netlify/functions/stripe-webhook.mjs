@@ -27,7 +27,7 @@ export async function handler(event) {
 
     if (stripeEvent.type === "checkout.session.completed") {
         const session = stripeEvent.data.object;
-        const { name, email, phone, preferredDate, backupDate, backupDate2, anythingElse } = session.metadata || {};
+        const { name, email, phone, preferredDate, backupDate, backupDate2, message } = session.metadata || {};
 
         await fetch("https://api.resend.com/emails", {
             method: "POST",
@@ -46,7 +46,7 @@ export async function handler(event) {
                         <p>Field: ${preferredDate}</p>
                         <p>Field: ${backupDate}</p>
                         <p>Field: ${backupDate2}</p>
-                        <p>Field: ${anythingElse}</p>
+                        <p>Field: ${message}</p>
                         `
             })
         });
