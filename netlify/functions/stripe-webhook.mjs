@@ -20,7 +20,7 @@ export async function handler(event) {
 
     let stripeEvent;
     try {
-        stripeEvent = stripeEvent.webhooks.constructEvent(rawbody, sig, process.env.STRIPE_WEBHOOK_SECRET)
+        stripeEvent = stripe.webhooks.constructEvent(rawbody, sig, process.env.STRIPE_WEBHOOK_SECRET)
     } catch(err) {
         return {statusCode: 400, body: `Webhook Error: ${err.message}`};
     }
