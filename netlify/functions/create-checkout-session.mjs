@@ -13,7 +13,7 @@ export async function handler(event) {
     } 
 
     try {
-        const { priceID, quantity } = JSON.parse(event.body || "{}");
+        const { priceID, quantity, metadata } = JSON.parse(event.body || "{}");
 
         const session = await stripe.checkout.sessions.create({
             line_items: [
@@ -23,6 +23,7 @@ export async function handler(event) {
                 }
             ],
             mode: 'payment',
+            metadata,
             success_url: `https://${process.env.SITE_URL}/success.html`,
             cancel_url: `https://${process.env.SITE_URL}/cancel.html`
         })
