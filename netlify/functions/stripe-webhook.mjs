@@ -29,7 +29,7 @@ export async function handler(event) {
         const session = stripeEvent.data.object;
         const { name, email, phone, preferredDate, backupDate, backupDate2, message } = session.metadata || {};
 
-        console.log(`Session ID: ${session.id}`);
+        console.log("event session.metadata:", JSON.stringify(session.metadata));
 
         await fetch("https://api.resend.com/emails", {
             method: "POST",
