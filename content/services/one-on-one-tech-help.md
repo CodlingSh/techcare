@@ -1,7 +1,7 @@
 +++
 title = 'One on One Tech Help'
 description = "Need personalized help with your device, software, or everyday tech issues? Our One-on-One Tech Consult provides customized support tailored to your unique needs."
-priceID = "INSERT PRICE HERE"
+priceID = "price_1S8Wi5GVXu1Hha9CQRMN0zVJ"
 weight = 1
 draft = false
 +++

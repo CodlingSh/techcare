@@ -1,7 +1,7 @@
 +++
 title = 'Tech Help One Hour Group or One on One'
 description = "Our 1-Hour Tech Help Class is the perfect way to get hands-on support, learn new skills, and build tech confidence — all in a relaxed, welcoming environment."
-priceID = "INSERT PRICE HERE"
+priceID = "price_1S8Wi5GVXu1Hha9CQRMN0zVJ"
 weight = 3
 draft = false
 +++
