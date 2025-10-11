@@ -85,7 +85,7 @@ export async function handler(event) {
             body: JSON.stringify({
                 from: "onboarding@resend.dev",
                 to: email,
-                subject: `Thanks ${fullName} — we received your booking!`,
+                subject: `Thanks ${fullName} - we received your booking!`,
                 html: cxHTML
             })
         });
