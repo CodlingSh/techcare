@@ -5,95 +5,174 @@
             <h2 class="text-primary mb-16 text-center text-6xl font-bold">{{ . }}</h2>
         {{ end }}
         <div class="flex flex-col bg-tertiary rounded-2xl w-full max-w-4xl p-8 mx-auto">      
-            <form id="checkoutForm">
+
+            <form id="checkoutForm" novalidate>
+              <div class="flex flex-col mb-4 w-full">
+                <label class="mb-1 pl-4" for="fullName"><strong>Name</strong></label>
+                <input class="bg-white px-4 py-2 rounded-2xl"
+                       type="text"
+                       id="fullName"
+                       name="fullName"
+                       placeholder="Jane Doe"
+                       autocomplete="name"
+                       required
+                       minlength="2"
+                       maxlength="100">
+                <p id="fullName-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+              </div>
+          
+              <div class="lg:flex justify-between gap-8">
                 <div class="flex flex-col mb-4 w-full">
-                    <label class="mb-1 pl-4" for="fullName"><strong>Name</strong></label>
-                    <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="fullName" name="fullName" placeholder="Doe">
+                  <label class="mb-1 pl-4" for="email"><strong>Email</strong></label>
+                  <input class="bg-white px-4 py-2 rounded-2xl"
+                         type="email"
+                         id="email"
+                         name="email"
+                         placeholder="name@example.com"
+                         autocomplete="email"
+                         inputmode="email"
+                         required
+                         maxlength="254">
+                  <p id="email-error" class="text-red-600 text-sm pl-4 mt-1"></p>
                 </div>
-                <div class="lg:flex justify-between gap-8">
-                    <div class="flex flex-col mb-4 w-full">
-                        <label class="mb-1 pl-4" for="email"><strong>Email</strong></label>
-                        <input class="bg-white px-4 py-2 rounded-2xl" type="text" id="email" name="email" placeholder="Doe">
-                    </div>
-                    <div class="flex flex-col mb-4 w-full">
-                        <label class="mb-1 pl-4" for="phone"><strong>Phone Number</strong></label>
-                        <input class="bg-white px-4 py-2 rounded-2xl" type="tel" pattern="^[0-9+\-\s()]{7,20}$" id="phone" name="phone" placeholder="Doe" title="Enter a valid phone number">
-                    </div>
+            
+                <div class="flex flex-col mb-4 w-full">
+                  <label class="mb-1 pl-4" for="phone"><strong>Phone Number</strong></label>
+                  <input class="bg-white px-4 py-2 rounded-2xl"
+                         type="tel"
+                         id="phone"
+                         name="phone"
+                         placeholder="(555) 555-5555"
+                         autocomplete="tel"
+                         inputmode="tel"
+                         pattern="^[0-9+\-\s()]{7,20}$"
+                         title="Enter a valid phone number"
+                         required>
+                  <p id="phone-error" class="text-red-600 text-sm pl-4 mt-1"></p>
                 </div>
-                <p class="p-8 text-center">Please pick a preferred date and two back up dates that would work best for you.</p>
-                <div class="flex flex-col gap-8 lg:flex-row">
-                    <div class="w-full flex flex-col">
-                        <label class="mb-1 pl-4" for="preferredDate"><strong>Preferred Date</strong></label>
-                        <input class="bg-white px-4 py-2 rounded-2xl mb-2" type="date" id="preferredDate" name="preferredDate">
-                        <label class="mb-1 pl-4" for="prefferedTime"><strong>Preferred Time</strong></label>
-                        <select class="bg-white px-4 py-2 rounded-2xl" name="preferredTime" id="preferredTime">
-                            <option value="" selected disabled>Select...</option>
-                            <option value="8:00 am - 9:00 am">8:00 am - 9:00 am</option>
-                            <option value="9:00 am - 10:00 am">9:00 am - 10:00 am</option>
-                            <option value="10:00 am - 11:00 am">10:00 am - 11:00 am</option>
-                            <option value="11:00 am - 12:00 pm">11:00 am - 12:00 pm</option>
-                            <option value="12:00 pm - 1:00 pm">12:00 pm - 1:00 pm</option>
-                            <option value="1:00 pm - 2:00 pm">1:00 pm - 2:00 pm</option>
-                            <option value="2:00 pm - 3:00 pm">2:00 pm - 3:00 pm</option>
-                            <option value="3:00 pm - 4:00 pm">3:00 pm - 4:00 pm</option>
-                            <option value="4:00 pm - 5:00 pm">4:00 pm - 5:00 pm</option>
-                            <option value="5:00 pm - 6:00 pm">5:00 pm - 6:00 pm</option>
-                            <option value="6:00 pm - 7:00 pm">6:00 pm - 7:00 pm</option>
-                            <option value="7:00 pm - 8:00 pm">7:00 pm - 8:00 pm</option>
-                            <option value="8:00 pm - 9:00 pm">8:00 pm - 9:00 pm</option>
-                        </select>
-                    </div>
-                    <div class="w-full flex flex-col">
-                        <label class="mb-1 pl-4" for="backupDate"><strong>1st Backup Date</strong></label>
-                        <input class="bg-white px-4 py-2 rounded-2xl mb-2" type="date" id="backupDate" name="backupDate">
-                        <label class="mb-1 pl-4" for="backupTime"><strong>1st Backup Time</strong></label>
-                        <select class="bg-white px-4 py-2 rounded-2xl" name="backupTime" id="backupTime">
-                            <option value="" selected disabled>Select...</option>
-                            <option value="8:00 am - 9:00 am">8:00 am - 9:00 am</option>
-                            <option value="9:00 am - 10:00 am">9:00 am - 10:00 am</option>
-                            <option value="10:00 am - 11:00 am">10:00 am - 11:00 am</option>
-                            <option value="11:00 am - 12:00 pm">11:00 am - 12:00 pm</option>
-                            <option value="12:00 pm - 1:00 pm">12:00 pm - 1:00 pm</option>
-                            <option value="1:00 pm - 2:00 pm">1:00 pm - 2:00 pm</option>
-                            <option value="2:00 pm - 3:00 pm">2:00 pm - 3:00 pm</option>
-                            <option value="3:00 pm - 4:00 pm">3:00 pm - 4:00 pm</option>
-                            <option value="4:00 pm - 5:00 pm">4:00 pm - 5:00 pm</option>
-                            <option value="5:00 pm - 6:00 pm">5:00 pm - 6:00 pm</option>
-                            <option value="6:00 pm - 7:00 pm">6:00 pm - 7:00 pm</option>
-                            <option value="7:00 pm - 8:00 pm">7:00 pm - 8:00 pm</option>
-                            <option value="8:00 pm - 9:00 pm">8:00 pm - 9:00 pm</option>
-                        </select>
-                    </div>
-                    <div class="w-full flex flex-col">
-                        <label class="mb-1 pl-4" for="backupDate2"><strong>2nd Backup Date</strong></label>
-                        <input class="bg-white px-4 py-2 rounded-2xl mb-2" type="date" id="backupDate2" name="backupDate2">
-                        <label class="mb-1 pl-4" for="backupTime2"><strong>2nd Backup Time</strong></label>
-                        <select class="bg-white px-4 py-2 rounded-2xl" name="backupTime2" id="backupTime2">
-                            <option value="" selected disabled>Select...</option>
-                            <option value="8:00 am - 9:00 am">8:00 am - 9:00 am</option>
-                            <option value="9:00 am - 10:00 am">9:00 am - 10:00 am</option>
-                            <option value="10:00 am - 11:00 am">10:00 am - 11:00 am</option>
-                            <option value="11:00 am - 12:00 pm">11:00 am - 12:00 pm</option>
-                            <option value="12:00 pm - 1:00 pm">12:00 pm - 1:00 pm</option>
-                            <option value="1:00 pm - 2:00 pm">1:00 pm - 2:00 pm</option>
-                            <option value="2:00 pm - 3:00 pm">2:00 pm - 3:00 pm</option>
-                            <option value="3:00 pm - 4:00 pm">3:00 pm - 4:00 pm</option>
-                            <option value="4:00 pm - 5:00 pm">4:00 pm - 5:00 pm</option>
-                            <option value="5:00 pm - 6:00 pm">5:00 pm - 6:00 pm</option>
-                            <option value="6:00 pm - 7:00 pm">6:00 pm - 7:00 pm</option>
-                            <option value="7:00 pm - 8:00 pm">7:00 pm - 8:00 pm</option>
-                            <option value="8:00 pm - 9:00 pm">8:00 pm - 9:00 pm</option>
-                        </select>
-                    </div>
+              </div>
+          
+              <p class="p-8 text-center">Please pick a preferred date and two back up dates that would work best for you.</p>
+          
+              <div class="flex flex-col gap-8 lg:flex-row">
+                <!-- Preferred -->
+                <div class="w-full flex flex-col">
+                  <label class="mb-1 pl-4" for="preferredDate"><strong>Preferred Date</strong></label>
+                  <input class="bg-white px-4 py-2 rounded-2xl mb-2"
+                         type="date"
+                         id="preferredDate"
+                         name="preferredDate"
+                         required>
+                  <p id="preferredDate-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+                
+                  <label class="mb-1 pl-4" for="preferredTime"><strong>Preferred Time</strong></label>
+                  <select class="bg-white px-4 py-2 rounded-2xl"
+                          name="preferredTime"
+                          id="preferredTime"
+                          required>
+                    <option value="" selected disabled>Select...</option>
+                    <option value="8:00 am - 9:00 am">8:00 am - 9:00 am</option>
+                    <option value="9:00 am - 10:00 am">9:00 am - 10:00 am</option>
+                    <option value="10:00 am - 11:00 am">10:00 am - 11:00 am</option>
+                    <option value="11:00 am - 12:00 pm">11:00 am - 12:00 pm</option>
+                    <option value="12:00 pm - 1:00 pm">12:00 pm - 1:00 pm</option>
+                    <option value="1:00 pm - 2:00 pm">1:00 pm - 2:00 pm</option>
+                    <option value="2:00 pm - 3:00 pm">2:00 pm - 3:00 pm</option>
+                    <option value="3:00 pm - 4:00 pm">3:00 pm - 4:00 pm</option>
+                    <option value="4:00 pm - 5:00 pm">4:00 pm - 5:00 pm</option>
+                    <option value="5:00 pm - 6:00 pm">5:00 pm - 6:00 pm</option>
+                    <option value="6:00 pm - 7:00 pm">6:00 pm - 7:00 pm</option>
+                    <option value="7:00 pm - 8:00 pm">7:00 pm - 8:00 pm</option>
+                    <option value="8:00 pm - 9:00 pm">8:00 pm - 9:00 pm</option>
+                  </select>
+                  <p id="preferredTime-error" class="text-red-600 text-sm pl-4 mt-1"></p>
                 </div>
-                <p class="p-8 text-center">Anything else you would like us to know?</p>  
-                <textarea id="anythingElse" name="anythingElse" class="w-full resize-y p-4 rounded-xl bg-white" rows="6"></textarea>
-                <button type="submit" class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded border px-8 py-2 duration-500 ml-auto mt-8 hover:text-white">
-                    Continue To Payment
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                    </svg>    
-                </button>
+            
+                <!-- Backup 1 -->
+                <div class="w-full flex flex-col">
+                  <label class="mb-1 pl-4" for="backupDate"><strong>1st Backup Date</strong></label>
+                  <input class="bg-white px-4 py-2 rounded-2xl mb-2"
+                         type="date"
+                         id="backupDate"
+                         name="backupDate"
+                         required>
+                  <p id="backupDate-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+                
+                  <label class="mb-1 pl-4" for="backupTime"><strong>1st Backup Time</strong></label>
+                  <select class="bg-white px-4 py-2 rounded-2xl"
+                          name="backupTime"
+                          id="backupTime"
+                          required>
+                    <option value="" selected disabled>Select...</option>
+                    <option value="8:00 am - 9:00 am">8:00 am - 9:00 am</option>
+                    <option value="9:00 am - 10:00 am">9:00 am - 10:00 am</option>
+                    <option value="10:00 am - 11:00 am">10:00 am - 11:00 am</option>
+                    <option value="11:00 am - 12:00 pm">11:00 am - 12:00 pm</option>
+                    <option value="12:00 pm - 1:00 pm">12:00 pm - 1:00 pm</option>
+                    <option value="1:00 pm - 2:00 pm">1:00 pm - 2:00 pm</option>
+                    <option value="2:00 pm - 3:00 pm">2:00 pm - 3:00 pm</option>
+                    <option value="3:00 pm - 4:00 pm">3:00 pm - 4:00 pm</option>
+                    <option value="4:00 pm - 5:00 pm">4:00 pm - 5:00 pm</option>
+                    <option value="5:00 pm - 6:00 pm">5:00 pm - 6:00 pm</option>
+                    <option value="6:00 pm - 7:00 pm">6:00 pm - 7:00 pm</option>
+                    <option value="7:00 pm - 8:00 pm">7:00 pm - 8:00 pm</option>
+                    <option value="8:00 pm - 9:00 pm">8:00 pm - 9:00 pm</option>
+                  </select>
+                  <p id="backupTime-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+                </div>
+            
+                <!-- Backup 2 -->
+                <div class="w-full flex flex-col">
+                  <label class="mb-1 pl-4" for="backupDate2"><strong>2nd Backup Date</strong></label>
+                  <input class="bg-white px-4 py-2 rounded-2xl mb-2"
+                         type="date"
+                         id="backupDate2"
+                         name="backupDate2"
+                         required>
+                  <p id="backupDate2-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+                
+                  <label class="mb-1 pl-4" for="backupTime2"><strong>2nd Backup Time</strong></label>
+                  <select class="bg-white px-4 py-2 rounded-2xl"
+                          name="backupTime2"
+                          id="backupTime2"
+                          required>
+                    <option value="" selected disabled>Select...</option>
+                    <option value="8:00 am - 9:00 am">8:00 am - 9:00 am</option>
+                    <option value="9:00 am - 10:00 am">9:00 am - 10:00 am</option>
+                    <option value="10:00 am - 11:00 am">10:00 am - 11:00 am</option>
+                    <option value="11:00 am - 12:00 pm">11:00 am - 12:00 pm</option>
+                    <option value="12:00 pm - 1:00 pm">12:00 pm - 1:00 pm</option>
+                    <option value="1:00 pm - 2:00 pm">1:00 pm - 2:00 pm</option>
+                    <option value="2:00 pm - 3:00 pm">2:00 pm - 3:00 pm</option>
+                    <option value="3:00 pm - 4:00 pm">3:00 pm - 4:00 pm</option>
+                    <option value="4:00 pm - 5:00 pm">4:00 pm - 5:00 pm</option>
+                    <option value="5:00 pm - 6:00 pm">5:00 pm - 6:00 pm</option>
+                    <option value="6:00 pm - 7:00 pm">6:00 pm - 7:00 pm</option>
+                    <option value="7:00 pm - 8:00 pm">7:00 pm - 8:00 pm</option>
+                    <option value="8:00 pm - 9:00 pm">8:00 pm - 9:00 pm</option>
+                  </select>
+                  <p id="backupTime2-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+                </div>
+              </div>
+          
+              <p class="p-8 text-center">Anything else you would like us to know?</p>
+              <textarea id="anythingElse"
+                        name="anythingElse"
+                        class="w-full resize-y p-4 rounded-xl bg-white"
+                        rows="6"
+                        maxlength="1000"
+                        placeholder="Allergies, access notes, parking, etc."></textarea>
+              <p id="anythingElse-error" class="text-red-600 text-sm pl-4 mt-1"></p>
+          
+              <button type="submit"
+                      class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded border px-8 py-2 duration-500 ml-auto mt-8 hover:text-white">
+                Continue To Payment
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                </svg>
+              </button>
             </form>
         </div>
     </div>
@@ -101,7 +180,26 @@
 
 <script>
     const form = document.getElementById("checkoutForm");
+    const todayStr = new Date().toISOString().slice(0, 10);
     let checkoutURL;
+
+    ["preferredDate", "backupDate", "backupDate2"].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.min = todayStr;
+    })
+
+    function validate() {
+        let validated = false;
+        const formInfo = new FormData(document.getElementById("checkoutForm"));
+        const fullName = formInfo.get("fullName");
+        const email = formInfo.get("email");
+        const phone = formInfo.get("phone");
+        const preferredDate = formInfo.get("preferredDate");
+        const backupDate = formInfo.get("backupDate");
+        const backupDate2 = formInfo.get("backupDate2");
+        const message = formInfo.get("anythingElse");
+
+    }
     
     form.addEventListener("submit", (event) => {
         event.preventDefault();
